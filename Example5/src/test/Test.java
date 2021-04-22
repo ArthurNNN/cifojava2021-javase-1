@@ -5,17 +5,22 @@ import java.util.Scanner;
 public class Test {
 
 	public static void main(String[] args) {
-		
+
+		clientBuyProcess();
+	}
+
+	private static void clientBuyProcess() {
+
 		double vipClientDiscount = 25.00;
 		double regularClientDiscount = 15.00;
 		double newCientDiscount = 00.00;
 
 		while (true) {
+			@SuppressWarnings("resource")
 			Scanner reader = new Scanner(System.in);
 			System.out.println("------------------------------------\n");
 			System.out.println("Tell me your name");
 			String userName = reader.nextLine();
-			
 
 			System.out.println("Tell me your type of user");
 			String userType = reader.nextLine();
@@ -29,20 +34,21 @@ public class Test {
 			System.out.println("User Name: " + userName);
 			System.out.println("User Type: " + userType);
 			System.out.println("User Buy: " + userBuy);
-		
+
 			double discount = 0;
 
 			if (userType.equals("vip")) {
 				discount = vipClientDiscount;
-				printTicket(discount,userBuy);
+				printTicket(discount, userBuy);
 			} else if (userType.equals("regular")) {
 				discount = regularClientDiscount;
-				printTicket(discount,userBuy);
+				printTicket(discount, userBuy);
 			} else if (userType.equals("new")) {
 				discount = newCientDiscount;
-				printTicket(discount,userBuy);
+				printTicket(discount, userBuy);
 			} else {
-				System.out.println(userName + " is not a specific user. You have to write 'new', 'regular' o 'vip'. Please, try another time...");
+				System.out.println(userName
+						+ " is not a specific user. You have to write 'new', 'regular' o 'vip'. Please, try another time...");
 			}
 		}
 	}
@@ -52,7 +58,7 @@ public class Test {
 		double totalDiscount = userBuy * discount / 100;
 		double amountToPayWithDis = userBuy - totalDiscount;
 		System.out.println("\nTicket:");
-		System.out.println("---------------------");	
+		System.out.println("---------------------");
 		System.out.println("The amount of your buy is: " + userBuy);
 		System.out.println("Your discount is: " + discount + "%");
 		System.out.println("Your total discount is: " + totalDiscount);
