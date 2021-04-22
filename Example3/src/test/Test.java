@@ -5,25 +5,24 @@ import java.util.Scanner;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		double vipClientDiscount = 25.00;
 		double regularClientDiscount = 15.00;
 		double newCientDiscount = 00.00;
-		
-
 
 		while (true) {
 			Scanner reader = new Scanner(System.in);
 			System.out.println("------------------------------------\n");
 			System.out.println("Tell me your name");
 			String userName = reader.nextLine();
+			
 
 			System.out.println("Tell me your type of user");
 			String userType = reader.nextLine();
 
 			System.out.println("Tell me amount of your buy");
-			double userBuy = reader.nextInt();
+			double userBuy = Double.valueOf(reader.nextLine());
+//			double userBuy = reader.nextInt();
 
 			System.out.println("\nUser: ");
 			System.out.println("---------------------");
@@ -31,36 +30,32 @@ public class Test {
 			System.out.println("User Type: " + userType);
 			System.out.println("User Buy: " + userBuy);
 			System.out.println("\nTicket:");
-			System.out.println("---------------------");			
+			System.out.println("---------------------");	
+			
+			double discount = 0;
+			double totalDiscount = 0;
+			double amountToPayWithDis = 0;
 
 			if (userType.equals("vip")) {
-
-				System.out.println("The amount of your buy is: " + userBuy);
-				System.out.println("Your discount is: " + vipClientDiscount +"%");
-				System.out.println("Your total discount is: " + userBuy * vipClientDiscount / 100);
-				userBuy = userBuy * (1 - vipClientDiscount / 100);
-
+				discount = vipClientDiscount;
+				System.out.println(userName + " is a vip user");
 			} else if (userType.equals("regular")) {
-
-				System.out.println("The amount of your buy is: " + userBuy);
-				System.out.println("Your discount is: " + regularClientDiscount+"%");
-				System.out.println("Your total discount is: " + userBuy * regularClientDiscount / 100);
-				userBuy = userBuy * (1 - regularClientDiscount / 100);
-
+				discount = regularClientDiscount;
 			} else if (userType.equals("new")) {
-				System.out.println("The amount of your buy is: " + userBuy);
-				System.out.println("Your discount is: " + newCientDiscount+ "%");
-				System.out.println("Your total discount is: " + userBuy * newCientDiscount / 100);
-				userBuy = userBuy * (1 - newCientDiscount / 100);
-
+				discount = newCientDiscount;
+				System.out.println(userName + " is a new user");
 			} else {
-				
-				System.out.println(userName + " is not a specific user");
-				System.out.println("The amount of your buy is: " + userBuy);
-				System.out.println("Your discount is: " + "0%");
+				discount = 0;
+				System.out.println(userName + " is not a specific user. You have to write new, regular o vip. Please, try another time...");
 			}
 			
-			System.out.println("Your should pay: " + userBuy + "\n");
+			totalDiscount = userBuy * discount / 100;
+			amountToPayWithDis = userBuy - totalDiscount;
+			
+			System.out.println("The amount of your buy is: " + userBuy);
+			System.out.println("Your discount is: " + discount +"%");
+			System.out.println("Your total discount is: " + totalDiscount);
+			System.out.println("Your should pay: " + amountToPayWithDis + "\n");
 			
 		}
 	}
