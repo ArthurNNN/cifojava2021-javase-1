@@ -14,6 +14,7 @@ public class Test {
 		double vipClientDiscount = 25.00;
 		double regularClientDiscount = 15.00;
 		double newCientDiscount = 00.00;
+		double taxValue = 21.00;
 
 		while (true) {
 			@SuppressWarnings("resource")
@@ -21,13 +22,10 @@ public class Test {
 			System.out.println("------------------------------------\n");
 			System.out.println("Tell me your name");
 			String userName = reader.nextLine();
-
 			System.out.println("Tell me your type of user");
 			String userType = reader.nextLine();
-
 			System.out.println("Tell me amount of your buy");
 			double userBuy = Double.valueOf(reader.nextLine());
-//			double userBuy = reader.nextInt();
 
 			System.out.println("\nUser: ");
 			System.out.println("---------------------");
@@ -57,11 +55,18 @@ public class Test {
 
 		double totalDiscount = userBuy * discount / 100;
 		double amountToPayWithDis = userBuy - totalDiscount;
+		totalTax = amountToPayWithDis*(1 - taxValue/100);
+		double amountToPayWithoutTax = userBuy - totalTax;
+		
+		
 		System.out.println("\nTicket:");
 		System.out.println("---------------------");
 		System.out.println("The amount of your buy is: " + userBuy);
 		System.out.println("Your discount is: " + discount + "%");
 		System.out.println("Your total discount is: " + totalDiscount);
-		System.out.println("Your should pay: " + amountToPayWithDis + "\n");
+		System.out.println("Your should pay without tax: " + amountToPayWithDis + "\n");
+		System.out.println("Tax is: " + taxValue + "%");
+		System.out.println("Your tax is: " + totalTax);
+		System.out.println("Your should pay with tax: " + amountToPayWithoutTax + "\n");
 	}
 }
