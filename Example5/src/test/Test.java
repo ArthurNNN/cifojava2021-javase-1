@@ -29,11 +29,8 @@ public class Test {
 			System.out.println("User Name: " + userName);
 			System.out.println("User Type: " + userType);
 			System.out.println("User Buy: " + userBuy);
-
-			
+		
 			double discount = 0;
-			double totalDiscount = 0;
-			double amountToPayWithDis = 0;
 
 			if (userType.equals("vip")) {
 				discount = vipClientDiscount;
@@ -51,7 +48,7 @@ public class Test {
 	}
 
 	private static void printTicket(double discount, double userBuy) {
-		// TODO Auto-generated method stub
+
 		double totalDiscount = userBuy * discount / 100;
 		double amountToPayWithDis = userBuy - totalDiscount;
 		System.out.println("\nTicket:");
