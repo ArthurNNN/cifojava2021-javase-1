@@ -2,7 +2,7 @@ package test;
 
 import java.util.Scanner;
 
-public class Operations {
+class Operations {
 	static void clientBuyProcess() {
 
 		final double vipClientDiscount = 25.00;
@@ -13,11 +13,14 @@ public class Operations {
 
 			Scanner reader = new Scanner(System.in);
 			System.out.println("------------------------------------\n");
-			System.out.println("Tell me your name");
+			System.out.println("Tell me your name ('quit to exit'):");
 			String userName = reader.nextLine();
-			System.out.println("Tell me your type of user");
+
+			if (userName.equals("quit"))
+				break;
+			System.out.println("Tell me your type of user:");
 			String userType = reader.nextLine();
-			System.out.println("Tell me amount of your buy");
+			System.out.println("Tell me amount of your buy:");
 			double userBuy = Double.valueOf(reader.nextLine());
 
 			System.out.println("\nUser: ");
@@ -59,6 +62,8 @@ public class Operations {
 
 	private static double addTax(double amountToPay) {
 		final double taxValue = 21.00;
-		return amountToPay * (1 + taxValue / 100);
+		double tax = amountToPay * (1 + taxValue / 100);
+		System.out.println("You should to pax tax: " + tax);
+		return tax;
 	}
 }
