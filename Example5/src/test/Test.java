@@ -3,21 +3,21 @@ package test;
 import java.util.Scanner;
 
 public class Test {
+	
+	final static double vipClientDiscount = 25.00;
+	final static double regularClientDiscount = 15.00;
+	final static double newCientDiscount = 00.00;
+	final static double taxValue = 21.00;
 
 	public static void main(String[] args) {
 
 		clientBuyProcess();
 	}
 
-	private static void clientBuyProcess() {
-
-		double vipClientDiscount = 25.00;
-		double regularClientDiscount = 15.00;
-		double newCientDiscount = 00.00;
-		double taxValue = 21.00;
+	static void clientBuyProcess() {
 
 		while (true) {
-			@SuppressWarnings("resource")
+
 			Scanner reader = new Scanner(System.in);
 			System.out.println("------------------------------------\n");
 			System.out.println("Tell me your name");
@@ -45,8 +45,7 @@ public class Test {
 				discount = newCientDiscount;
 				printTicket(discount, userBuy);
 			} else {
-				System.out.println(userName
-						+ " is not a specific user. You have to write 'new', 'regular' o 'vip'. Please, try another time...");
+				System.out.println("Please, you have to write 'new', 'regular' o 'vip'. Please, try another time...");
 			}
 		}
 	}
@@ -54,19 +53,18 @@ public class Test {
 	private static void printTicket(double discount, double userBuy) {
 
 		double totalDiscount = userBuy * discount / 100;
-		double amountToPayWithDis = userBuy - totalDiscount;
-		totalTax = amountToPayWithDis*(1 - taxValue/100);
-		double amountToPayWithoutTax = userBuy - totalTax;
-		
-		
+		double amountToPay = userBuy - totalDiscount;
+
 		System.out.println("\nTicket:");
 		System.out.println("---------------------");
 		System.out.println("The amount of your buy is: " + userBuy);
 		System.out.println("Your discount is: " + discount + "%");
 		System.out.println("Your total discount is: " + totalDiscount);
-		System.out.println("Your should pay without tax: " + amountToPayWithDis + "\n");
-		System.out.println("Tax is: " + taxValue + "%");
-		System.out.println("Your tax is: " + totalTax);
-		System.out.println("Your should pay with tax: " + amountToPayWithoutTax + "\n");
+		System.out.println("Your should pay (with discount): " + amountToPay);
+		System.out.println("Your should pay (with taxes): " + addTax(amountToPay));
+	}
+
+	private static double addTax(double amountToPay) {
+		return amountToPay * (1 + taxValue / 100);
 	}
 }
