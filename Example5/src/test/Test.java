@@ -4,17 +4,16 @@ import java.util.Scanner;
 
 public class Test {
 	
-	final static double vipClientDiscount = 25.00;
-	final static double regularClientDiscount = 15.00;
-	final static double newCientDiscount = 00.00;
-	final static double taxValue = 21.00;
-
 	public static void main(String[] args) {
 
 		clientBuyProcess();
 	}
 
 	static void clientBuyProcess() {
+		
+		final double vipClientDiscount = 25.00;
+		final double regularClientDiscount = 15.00;
+		final double newCientDiscount = 00.00;
 
 		while (true) {
 
@@ -65,6 +64,7 @@ public class Test {
 	}
 
 	private static double addTax(double amountToPay) {
+		final double taxValue = 21.00;
 		return amountToPay * (1 + taxValue / 100);
 	}
 }
