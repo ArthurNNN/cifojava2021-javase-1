@@ -18,6 +18,8 @@ public class Init {
 		Operations.printStringDiagonal(word);
 		Operations.lineBreak();
 
+		
+		System.out.println("Buy buy my friends...");
 	}
 	
 	

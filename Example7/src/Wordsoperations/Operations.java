@@ -5,7 +5,7 @@ public class Operations {
 	public static void print(String wordToPrint) {
 		System.out.print(wordToPrint);
 	}
-	
+
 	public static void print(char charToPrint) {
 		System.out.print(charToPrint);
 	}
@@ -24,7 +24,7 @@ public class Operations {
 		}
 		lineBreak();
 	}
-	
+
 	public static void printStringVertical(String wordToPrint) {
 		int i = 0;
 		while (i < wordToPrint.length()) {
@@ -33,21 +33,19 @@ public class Operations {
 			i++;
 		}
 	}
-	
+
 	public static void printStringDiagonal(String wordToPrint) {
 		int i = 0;
 		int j = 0;
 		while (i < wordToPrint.length()) {
 			print(wordToPrint.charAt(i));
 			lineBreak();
-			j = i+1;
-			while (j>0) {
+			j = i + 1;
+			while (j > 0) {
 				print("  ");
 				j--;
 			}
 			i++;
 		}
 	}
-	
-
 }
