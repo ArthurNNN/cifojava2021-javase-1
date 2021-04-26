@@ -42,7 +42,7 @@ public class Operations {
 			lineBreak();
 			j = i+1;
 			while (j>0) {
-				print(' ');
+				print("  ");
 				j--;
 			}
 			i++;
