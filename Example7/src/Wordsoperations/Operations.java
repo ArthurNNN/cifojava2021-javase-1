@@ -22,14 +22,29 @@ public class Operations {
 			print(' ');
 			i++;
 		}
+		lineBreak();
 	}
 	
 	public static void printStringVertical(String wordToPrint) {
 		int i = 0;
-
 		while (i < wordToPrint.length()) {
 			print(wordToPrint.charAt(i));
 			lineBreak();
+			i++;
+		}
+	}
+	
+	public static void printStringDiagonal(String wordToPrint) {
+		int i = 0;
+		int j = 0;
+		while (i < wordToPrint.length()) {
+			print(wordToPrint.charAt(i));
+			lineBreak();
+			j = i+1;
+			while (j>0) {
+				print(' ');
+				j--;
+			}
 			i++;
 		}
 	}

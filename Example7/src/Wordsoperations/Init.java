@@ -15,6 +15,8 @@ public class Init {
 		Operations.lineBreak();
 		Operations.printStringVertical(word);
 		Operations.lineBreak();
+		Operations.printStringDiagonal(word);
+		Operations.lineBreak();
 
 	}
 	
