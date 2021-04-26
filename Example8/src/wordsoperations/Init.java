@@ -9,16 +9,18 @@ public class Init {
 		
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Write some string ...");
-		String word = reader.nextLine();
+		String s = reader.nextLine();
 		
 		
+		Editing.printEmailString(s);
 		
-		Operations.printStringHorizontal(word);
-		Operations.lineBreak();
-		Operations.printStringVertical(word);
-		Operations.lineBreak();
-		Operations.printStringDiagonal(word);
-		Operations.lineBreak();
+		
+//		Operations.printStringHorizontal(word);
+//		Operations.lineBreak();
+//		Operations.printStringVertical(word);
+//		Operations.lineBreak();
+//		Operations.printStringDiagonal(word);
+//		Operations.lineBreak();
 
 		
 		System.out.println("Buy buy my friends...");
