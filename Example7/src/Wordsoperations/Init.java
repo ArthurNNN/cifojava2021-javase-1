@@ -11,7 +11,9 @@ public class Init {
 		System.out.println("Write some string ...");
 		String word = reader.nextLine();
 		
-		Operations.print(word);
+		Operations.printStringHorizontal(word);
+		Operations.lineBreak();
+		Operations.printStringVertical(word);
 		Operations.lineBreak();
 
 	}
