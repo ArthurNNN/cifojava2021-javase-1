@@ -5,30 +5,15 @@ import java.util.Scanner;
 
 public class EmailManagment {
 
-	public static void createAccount(Scanner reader) {
-		// TODO Auto-generated method stub
+	public static void createAccount(String s) {
+		// scope #26
+		// testRandom();
+		createUser(s);
+		createEmail(createUser(s));
+		createPassword();
+		printUserAccount(s);
 
-		System.out.println("Write your name and surname:");
-		String s = reader.nextLine();
-		Operations.lineBreak();
-		int spacePosition = s.indexOf(' ');
-		String email = (s.substring(0, spacePosition) + s.substring(spacePosition+1)).toLowerCase() + "@java.com";
-		System.out.println("Your email/login:");
-		System.out.println(email);
-		
-		
-		String password = "";
-		int count = 0;
-		while (count < 2) {
-			int n = createIntRandom(100);
- 
-			String j = createCharsRandom();
-			password = password + n + j;
-			count++;
-		}
-		System.out.println("Your password:");
-		System.out.println(password);
-		Operations.lineBreak();
+		// TODO Auto-generated method stub
 
 
 	}
@@ -46,6 +31,50 @@ public class EmailManagment {
 		char s1 = alphabetChars.charAt(createIntRandom(alphabetChars.length()));
 		char s2 = alphabetChars2.charAt(createIntRandom(alphabetChars2.length()));
 		return "" + s1 + s2;
+	}
+
+	private static String createUser(String s) {
+		// TODO Auto-generated method stub
+		int spacePosition = s.indexOf(' ');
+		String userLogin = (s.substring(0, spacePosition) + s.substring(spacePosition + 1)).toLowerCase();
+		return userLogin;
+	}
+
+	private static String createEmail(String s) {
+		// TODO Auto-generated method stub
+		String email = s + "@java.com";
+		return email;
+	}
+
+	private static void printUserAccount(String s) {
+		// TODO Auto-generated method stub
+
+
+		System.out.print("Your user login: ");
+		System.out.print(createUser(s));
+		Operations.lineBreak();
+
+		System.out.print("Your email: ");
+		System.out.print(createEmail(createUser(s)));
+		Operations.lineBreak();
+		System.out.print("Your password: ");
+		System.out.print(createPassword());
+		Operations.lineBreak();
+	}
+
+	private static String createPassword() {
+		// TODO Auto-generated method stub
+		String password = "";
+		int count = 0;
+		while (count < 2) {
+			int n = createIntRandom(100);
+
+			String j = createCharsRandom();
+			password = password + n + j;
+			count++;
+		}
+
+		return password;
 	}
 
 }

@@ -8,10 +8,13 @@ public class Init {
 		// TODO Auto-generated method stub
 		
 		Scanner reader = new Scanner(System.in);
+		System.out.println("Write your name and surname:");
+		String s = reader.nextLine();
 
-		
 
-		EmailManagment.createAccount(reader);
+		Operations.lineBreak();
+
+		EmailManagment.createAccount(s);
 		
 		
 //		Operations.printStringHorizontal(word);
@@ -19,7 +22,7 @@ public class Init {
 //		Operations.printStringVertical(word);
 //		Operations.lineBreak();
 //		Operations.printStringDiagonal(word);
-//		Operations.lineBreak();
+		Operations.lineBreak();
 
 		
 		System.out.println("Buy buy my friends...");
