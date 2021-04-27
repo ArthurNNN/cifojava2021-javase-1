@@ -8,11 +8,10 @@ public class Init {
 		// TODO Auto-generated method stub
 		
 		Scanner reader = new Scanner(System.in);
-		System.out.println("Write some string ...");
-		String s = reader.nextLine();
+
 		
-		
-		Editing.printEmailString(s);
+
+		EmailManagment.createAccount(reader);
 		
 		
 //		Operations.printStringHorizontal(word);
