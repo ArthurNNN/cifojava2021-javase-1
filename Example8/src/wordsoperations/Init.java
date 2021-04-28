@@ -22,10 +22,10 @@ public class Init {
 //		Operations.printStringVertical(word);
 //		Operations.lineBreak();
 //		Operations.printStringDiagonal(word);
-		Operations.lineBreak();
+//		Operations.lineBreak();
 
 		
-		System.out.println("Buy buy my friends...");
+		System.out.println("\nBuy buy my friends...");
 	}
 	
 	
