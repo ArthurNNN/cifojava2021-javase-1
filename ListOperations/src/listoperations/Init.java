@@ -30,13 +30,17 @@ public class Init {
 		
 		System.out.println("Does it contain 'fresa'?... " + fruits.contains("fresa"));
 		
-		fruits.clear();
+//		fruits.clear();
+		fruits.remove("platano");
 		
 		System.out.print("fruit... ");
 		System.out.println(fruits.size());
 		System.out.print("Is empty?... ");
 		System.out.println(fruits.isEmpty());
 		printArray(fruits);
+		
+		String fruitsString = fruits.toString();
+		System.out.println(fruitsString);
 
 	}
 
