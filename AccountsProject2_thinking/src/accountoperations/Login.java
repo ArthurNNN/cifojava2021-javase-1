@@ -2,7 +2,8 @@ package accountoperations;
 
 public class Login {
 	
-public static int logIn(String user, String password) {
+public static int logIn(String userAndPassword) {
+	System.out.println("Login "+ userAndPassword + " ....sucess!");
 	
 	return 0;
 }

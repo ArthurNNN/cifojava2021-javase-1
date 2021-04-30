@@ -15,8 +15,8 @@ public class Init {
 		System.out.println("Write user (name and surname) to create Acount:");
 		String s = reader.nextLine();
 
-		User user = AccountlManagment.createAccount(s);
-		Login.logIn(user);
+		AccountlManagment.createAccount(s);
+		Login.logIn("arturnikitsin 12345678");
 				
 		System.out.println("\nBuy buy my friends...");
 		reader.close();
