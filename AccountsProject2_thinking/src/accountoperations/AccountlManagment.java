@@ -13,6 +13,7 @@ public class AccountlManagment {
 		String password = AccountCreating.createPassword();
 		AccountCreating.printUserAccount(user, email, password);
 
+		// TODO Auto-generated method stub
 
 	}
 

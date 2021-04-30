@@ -16,8 +16,7 @@ public class Init {
 		String s = reader.nextLine();
 
 		AccountlManagment.createAccount(s);
-		
-		login()
+		Login();
 				
 		System.out.println("\nBuy buy my friends...");
 		reader.close();
