@@ -2,8 +2,9 @@ package accountoperations;
 
 public class Login {
 	
-	user 
+public static int logIn(String user, String password) {
 	
-	password
+	return 0;
+}
 
 }
