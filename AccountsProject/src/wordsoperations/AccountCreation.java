@@ -1,4 +1,4 @@
-package accountoperations;
+package wordsoperations;
 
 public class AccountCreation {
 	
@@ -23,7 +23,7 @@ public class AccountCreation {
 		return email;
 	}
 
-	public static String createPassword() {
+	public static String createPasswod() {
 		// scope #7
 
 		String password = "";
