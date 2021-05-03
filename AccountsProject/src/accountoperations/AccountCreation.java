@@ -1,18 +1,25 @@
 package accountoperations;
 
-public class AccountCreating {
+public class AccountCreation {
+	
 
-	public static String createUser(String nameAndSurname) {
 
-		int spacePosition = nameAndSurname.indexOf(' ');
-		String userLogin = (nameAndSurname.substring(0, spacePosition) + nameAndSurname.substring(spacePosition + 1))
-				.toLowerCase();
-		return userLogin;
+	public static String createUser(String createUser) {
+		// scope #5
+
+		int blank = createUser.indexOf(" ");
+		String user = createUser.substring(0, blank);
+
+		return user;
 	}
 
-	public static String createEmail(String login) {
+	public static String createEmail(String createEmail) {
+		// scope #6
 
-		String email = login + "@java.com";
+		int blank = createEmail.indexOf(" ");
+		String surname = createEmail.substring(blank + 1, createEmail.length());
+		String email = createEmail.charAt(0) + surname + "@java.com";
+
 		return email;
 	}
 
@@ -38,12 +45,12 @@ public class AccountCreating {
 
 	}
 
-	public static String accountToString(String user, String email, String password) {
-
+	public static String accountToString (String user, String email, String password) {
+		
 		String accountToString = user + "-" + email + "-" + password;
-
+		
 		return accountToString;
-
+		
+		
 	}
-
 }

@@ -1,28 +1,37 @@
 package accountoperations;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Init {
-
+	// scope #1
 	public static void main(String[] args) {
-		
-		ArrayList<String> users = new ArrayList<String>();	
-		
+
+		// scope #2
 		Scanner reader = new Scanner(System.in);
-		
 
-		System.out.println("Write user (name and surname) to create Acount:");
-		String s = reader.nextLine();
+		System.out.println("Type user (name and surname) to create Account ...");
+		String userToCreateAccount = reader.nextLine();
 
-		AccountlManagment.createAccount(s);
-		
-//		login();
-				
-		System.out.println("\nBuy buy my friends...");
+		String account = AccountManagment.createAccount(userToCreateAccount);
+
+		// System.out.println(account);
+
+		String user = Utils.fromStringToUser(account);
+		String password = Utils.fromStringToPassword(account);
+
+		boolean isValidated = Login.validateAccount(reader, user, password);
+
+		if (isValidated) {
+
+			// to-do
+			// AccountUpdating
+			// AccountDeleting
+
+			isValidated = false;
+		}
+
+		System.out.println("\nBye bye my friend...");
 		reader.close();
 	}
-	
-	
 
 }
