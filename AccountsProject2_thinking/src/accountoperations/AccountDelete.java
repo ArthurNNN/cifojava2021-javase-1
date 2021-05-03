@@ -1,5 +1,5 @@
 package accountoperations;
 
-public class AccountDeleting {
+public class AccountDelete {
 
 }

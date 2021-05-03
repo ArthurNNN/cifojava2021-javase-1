@@ -16,29 +16,34 @@ public class AccountCreating {
 		return email;
 	}
 
-	public static void printUserAccount(String user, String email, String password) {
-		// TODO Auto-generated method stub
+	public static String createPassword() {
+		// scope #7
 
-		System.out.println("Account data:");
-		System.out.println("Login: " + user);
+		String password = "";
+
+		password = password + Utils.createCharRandom() + Utils.createIntRandom(10000)
+		+ Utils.createCharRandom() + Utils.createCharRandom()
+				+ Utils.createIntRandom(596);
+
+		return password;
+	}
+
+	public static void printUserAccount(String user, String email, String password) {
+		// scope #8
+
+		System.out.println("User Account: ");
+		System.out.println("User : " + user);
 		System.out.println("Email: " + email);
 		System.out.println("Password: " + password);
 
 	}
 
-	public static String createPassword() {
+	public static String accountToString(String user, String email, String password) {
 
-		String password = "";
-		int count = 0;
-		while (count < 2) {
-			int n = Utils.createIntRandom(100);
+		String accountToString = user + "-" + email + "-" + password;
 
-			String j = Utils.createCharsRandom();
-			password = password + n + j;
-			count++;
-		}
+		return accountToString;
 
-		return password;
 	}
 
 }

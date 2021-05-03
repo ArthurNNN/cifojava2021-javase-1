@@ -1,6 +1,6 @@
 package accountoperations;
 
-public class AccountCreating {
+public class AccountCreation {
 
 	public static String createUser(String nameAndSurname) {
 

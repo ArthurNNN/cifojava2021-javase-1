@@ -1,5 +1,5 @@
 package accountoperations;
 
-public class AccountUpdating {
+public class AccountUpdate {
 
 }

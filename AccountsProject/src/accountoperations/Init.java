@@ -17,7 +17,7 @@ public class Init {
 
 		AccountlManagment.createAccount(s);
 		
-		login()
+//		login();
 				
 		System.out.println("\nBuy buy my friends...");
 		reader.close();
