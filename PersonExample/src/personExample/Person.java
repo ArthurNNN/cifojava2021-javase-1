@@ -18,12 +18,17 @@ public class Person {
 		this.basicSalary = basicSalary;
 	}
 
-//Methods from Person Class
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", age=" + age + ", weigth=" + weigth + ", heigth=" + heigth + ", basicSalary="
-				+ basicSalary + "]";
+	public Person() {
+		super();
 	}
+
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+
+//Methods from Person Class
 
 //Getters and Setters and toString
 	public String getName() {
@@ -64,6 +69,14 @@ public class Person {
 
 	public void setBasicSalary(double basicSalary) {
 		this.basicSalary = basicSalary;
+	}
+
+	// toString
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + ", weigth=" + weigth + ", heigth=" + heigth + ", basicSalary="
+				+ basicSalary + "]";
 	}
 
 }
