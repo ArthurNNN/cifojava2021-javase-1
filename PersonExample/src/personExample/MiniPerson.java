@@ -31,7 +31,7 @@ public class MiniPerson {
 
 	@Override
 	public String toString() {
-		return "Person [name=" + name + "]";
+		return "Person fieldes: ( name=" + name + " )";
 	}
 
 }

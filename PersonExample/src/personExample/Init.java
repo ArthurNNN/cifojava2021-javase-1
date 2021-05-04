@@ -3,10 +3,10 @@ package personExample;
 public class Init {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		
-		TestPerson.executePerson();
+				TestPerson.executePerson();
+		
+		System.out.println("Bye, bye my friend...");
 	}
 
 }
